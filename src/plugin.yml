@@ -1,5 +1,5 @@
 name: MineZ
-main: net.minezdevteam.MineZ
+main: net.minezdevteam.MineZ.Main
 version: 1.0
 author: MineZ-Devteam
 commands:

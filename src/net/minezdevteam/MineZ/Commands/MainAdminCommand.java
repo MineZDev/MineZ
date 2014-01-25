@@ -7,6 +7,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 public class MainAdminCommand implements CommandExecutor {
@@ -32,10 +34,12 @@ public class MainAdminCommand implements CommandExecutor {
 						Tools.sendAdminHelp(sender);
 					}else if(action.equalsIgnoreCase("enable")){
 						// enable a game
-					}else if (action.equalsIgnoreCast("tutvill")){
+					}else if (action.equalsIgnoreCase("tutvill")){
+						 Player p = (Player)sender;
 						LivingEntity ent = p.getWorld().spawnCreature(p.getLocation(), EntityType.VILLAGER);
                                          ent.setCustomName(ChatColor.GREEN + "" + ChatColor.BOLD + "MineZ Tutorial");
                                          ent.setCustomNameVisible(true);
+                        //Spawns a Tutorial Villager (Doesn't work yet)
 					}
 					
 					else if(action.equalsIgnoreCase("disable")){
