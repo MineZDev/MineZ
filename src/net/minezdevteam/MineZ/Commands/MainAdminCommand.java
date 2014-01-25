@@ -32,7 +32,13 @@ public class MainAdminCommand implements CommandExecutor {
 						Tools.sendAdminHelp(sender);
 					}else if(action.equalsIgnoreCase("enable")){
 						// enable a game
-					}else if(action.equalsIgnoreCase("disable")){
+					}else if (action.equalsIgnoreCast("tutvill")){
+						LivingEntity ent = p.getWorld().spawnCreature(p.getLocation(), EntityType.VILLAGER);
+                                         ent.setCustomName(ChatColor.GREEN + "" + ChatColor.BOLD + "MineZ Tutorial");
+                                         ent.setCustomNameVisible(true);
+					}
+					
+					else if(action.equalsIgnoreCase("disable")){
 						// disable and stop a game
 					}else if(action.equalsIgnoreCase("setspawn")){
 						// set a new spawn point
