@@ -1,4 +1,4 @@
 MineZ
 =====
 
-The best OpenSource MineZ plugin!
+The best OpenSource MineZ minigame from Shotbow!
