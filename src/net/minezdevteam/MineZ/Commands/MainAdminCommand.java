@@ -1,6 +1,7 @@
 package net.minezdevteam.MineZ.Commands;
 
 import net.minezdevteam.MineZ.Main;
+import net.minezdevteam.MineZ.Config.SpawnsConfig;
 import net.minezdevteam.MineZ.Tools.Tools;
 
 import org.bukkit.ChatColor;
@@ -14,9 +15,11 @@ import org.bukkit.entity.Player;
 public class MainAdminCommand implements CommandExecutor {
 
 	private Main plugin;
+	private SpawnsConfig spawnsConfig = null;
 	 
 	public MainAdminCommand(Main plugin) {
 		this.plugin = plugin;
+		this.spawnsConfig = new SpawnsConfig(plugin);
 	}
 	
 	@Override
@@ -29,29 +32,28 @@ public class MainAdminCommand implements CommandExecutor {
 						return true;
 					}
 					
+					Player p = (Player)sender;
+					
 					// admin commands
 					if(action.equalsIgnoreCase("help")){
 						Tools.sendAdminHelp(sender);
 					}else if(action.equalsIgnoreCase("enable")){
 						// enable a game
 					}else if (action.equalsIgnoreCase("tutvill")){
-						 Player p = (Player)sender;
-						LivingEntity ent = p.getWorld().spawnCreature(p.getLocation(), EntityType.VILLAGER);
-                                         ent.setCustomName(ChatColor.GREEN + "" + ChatColor.BOLD + "MineZ Tutorial");
-                                         ent.setCustomNameVisible(true);
+						 LivingEntity ent = p.getWorld().spawnCreature(p.getLocation(), EntityType.VILLAGER);
+                         ent.setCustomName(ChatColor.GREEN + "" + ChatColor.BOLD + "MineZ Tutorial");
+                         ent.setCustomNameVisible(true);
                         //Spawns a Tutorial Villager (Doesn't work yet)
-					}
-					
-					else if(action.equalsIgnoreCase("disable")){
+					}else if(action.equalsIgnoreCase("disable")){
 						// disable and stop a game
 					}else if(action.equalsIgnoreCase("setspawn")){
 						// set a new spawn point
-						
+						Tools.setSpawn(plugin, p.getLocation(), spawnsConfig);
 					}else if(action.equalsIgnoreCase("setchest")){
 						// set a new chest
 						if(args.length > 1){
 							String type = args[1];
-							
+							Tools.setChest(plugin, p.getLocation(), type);
 						}else{
 							Tools.sendAdminHelp(sender);
 						}
