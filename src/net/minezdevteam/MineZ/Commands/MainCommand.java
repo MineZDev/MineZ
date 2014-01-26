@@ -3,6 +3,7 @@ package net.minezdevteam.MineZ.Commands;
 import net.minezdevteam.MineZ.Main;
 import net.minezdevteam.MineZ.Tools.Tools;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,6 +24,7 @@ public class MainCommand implements CommandExecutor {
 				if(args.length > 0){
 					String action = args[0];
 					if(!(sender instanceof Player)){
+						sender.sendMessage(ChatColor.RED + "Please execute this command ingame.");
 						return true;
 					}
 					

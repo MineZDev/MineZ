@@ -16,6 +16,8 @@ public class Main extends JavaPlugin {
 		// init commands
 		getCommand("minez").setExecutor(new MainCommand(this));
 		getCommand("mineza").setExecutor(new MainAdminCommand(this));
+		getCommand("mz").setExecutor(new MainCommand(this));
+		getCommand("mza").setExecutor(new MainAdminCommand(this));
 		
 		// init listener
 
