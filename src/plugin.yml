@@ -1,25 +1,21 @@
 name: MineZ
 main: net.minezdevteam.MineZ.Main
 version: 1.0
-author: MineZ-Devteam
+authors: [Yarno033, InstanceLabs, FerryBig, DancingWalrus]
 commands:
    minez:
       description: MineZ Main user command
-      usage: /<command> [action]
       permission: <plugin name>.user
       permission-message: You don't have permission.
    mineza:
       description: MineZ Main admin command
-      usage: /<command> [action]
       permission: <plugin name>.admin
       permission-message: You don't have permission.
    mza:
       description: MineZ Main admin command
-      usage: /<command> [action]
       permission: <plugin name>.admin
       permission-message: You don't have permission.
    mz:
       description: MineZ Main user command
-      usage: /<command> [action]
       permission: <plugin name>.admin
       permission-message: You don't have permission.
